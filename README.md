@@ -15,7 +15,7 @@ Import the provided SQL file (PSE.sql) into your MySQL database.
 Update the cn.php file according to your MySQL user and database configuration.
 
 ## Usage:
-1. Get started from index.php
+1. Get started from index.php or use ams1gn.id/web_registration (for testing)
 2. Tap button "Get Started"
 3. Sign in if already have an account, or "Sign up" if you don't have an account
 4. Fill "Form Pendaftaran Perusahaan" and Submit
