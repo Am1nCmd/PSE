@@ -21,9 +21,13 @@
 			<thead>
 				<tr>
 					<th scope="col">#</th>
-					<th scope="col">First</th>
-					<th scope="col">Last</th>
-					<th scope="col">Handle</th>
+					<th scope="col">Perusahaan</th>
+					<th scope="col">Tlp</th>
+					<th scope="col">Email</th>
+					<th scope="col">Domain</th>
+					<th scope="col">Dokumen</th>
+					<th scope="col">Sektor Perusahaan</th>
+					<th scope="col">Add On</th>
 				</tr>
 			</thead>
 			<tbody>
