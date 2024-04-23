@@ -87,7 +87,7 @@
 		?>
 		
 		<form method="post" enctype="multipart/form-data" autocomplete="">
-			<input type="hidden" value="Gilang" name="addBy">
+			<input type="hidden" value="<?php echo $fullname ?>" name="addBy">
 			<div class="mb-3">
 				<label for="nama_perusahaan" class="form-label">Nama Perusahaan:</label>
 				<input type="text" class="form-control" id="nama_perusahaan" name="nama_perusahaan" placeholder="Nama Perusahaan" required/>

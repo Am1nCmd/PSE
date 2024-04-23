@@ -1,52 +1,53 @@
+<?php
+	include 'auth.php';
+?>
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Contoh DataTables</title>
-
-  <script src="https://releases.jquery.com/"></script>
-
-  <link rel="stylesheet" href="https://cdn.datatables.net/" type="text/css">
-  <script src="https://cdn.datatables.net/" type="text/javascript"></script>
-
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <title>PSE - Form Pendaftaran</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
-
-  <h1>Contoh DataTables</h1>
-
-  <table id="example" class="display" style="width:100%">
-    <thead>
-      <tr>
-        <th>Nama</th>
-        <th>Email</th>
-        <th>Kota</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Budi</td>
-        <td>budi@example.com</td>
-        <td>Surabaya</td>
-      </tr>
-      <tr>
-        <td>Ani</td>
-        <td>ani@example.com</td>
-        <td>Jakarta</td>
-      </tr>
-      <tr>
-        <td>Cipto</td>
-        <td>cipto@example.com</td>
-        <td>Bandung</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <script>
-    $(document).ready(function() {
-      $('#example').DataTable();
-    });
-  </script>
-
+    
+	<?php include 'header.php'; ?>
+    
+	<div class="container">
+		
+		<h1 class="mt-3">Form Pendaftaran Perusahaan</h1>
+		
+		<table class="table table-bordered">
+			<thead>
+				<tr>
+					<th scope="col">#</th>
+					<th scope="col">First</th>
+					<th scope="col">Last</th>
+					<th scope="col">Handle</th>
+				</tr>
+			</thead>
+			<tbody>
+				<?php
+					$i=1;
+					$tp=mysqli_query($cn, "SELECT * FROM web_registration");
+					while($r=mysqli_fetch_array($tp)){
+				?>
+				<tr>
+					<th scope="row"><?php echo $i ?></th>
+					<td><?php echo $r['id_perusahaan'] ?> - <?php echo $r['nama_perusahaan'] ?></td>
+					<td><?php echo $r['no_tlp'] ?></td>
+					<td><?php echo $r['email'] ?></td>
+					<td><?php echo $r['domain_website'] ?></td>
+					<td><?php echo $r['dokumen_perizinan'] ?></td>
+					<td><?php echo $r['sektor_perusahaan'] ?></td>
+					<td><?php echo $r['addOn'] ?></td>
+				</tr>
+				<?php $i=$i+1;?>
+				<?php } ?>
+			</tbody>
+		</table>
+		
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
